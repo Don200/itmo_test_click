@@ -14,3 +14,8 @@ def option(*param_decls: str, is_flag: bool = False, flag_value: Optional[Any] =
         return click.option(*param_decls, is_flag=is_flag, flag_value=flag_value, default=default, **kwargs)(f)
 
     return _option
+
+@click.command()
+@option("--name", is_flag=False, flag_value="Flag", default="Default")
+def hello(name: str) -> None:
+    click.echo(f"Hello, {name}!")
