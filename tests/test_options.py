@@ -1,5 +1,6 @@
 from click.testing import CliRunner
 from src.click.decorators import option
+import click
 
 @click.command()
 @option("--name", is_flag=False, flag_value="Flag", default="Default")
